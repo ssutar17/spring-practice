@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean class="com.constructorInjection.Course" name="c1">
+		<constructor-arg value="Java"/>
+	</bean>
+	<bean class="com.constructorInjection.Person" name="p1">
+		<constructor-arg value="Sunny"/>
+		<constructor-arg value="101"/>
+		<constructor-arg ref="c1"/>
+		<constructor-arg>
+			<list>
+				<value>8738543758</value>
+				<value>3857834794</value>
+			</list>
+		</constructor-arg>
+		</bean>
+</beans>

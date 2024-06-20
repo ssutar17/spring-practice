@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<util:set set-class="java.util.HashSet" id="subjects">
+		<value>Maths</value>
+		<value>Database</value>
+		<value>Cpp</value>
+	</util:set>
+	<util:map  id="courses">
+		<entry key="1" value="Java" />
+		<entry key="2" value="Python" />
+		<entry key="3" value="Cloud" />
+	</util:map>
+
+	<bean class="com.standalone.collectiontype.Teacher" name="teacher">
+		<constructor-arg value="Sunny Sutar" />
+	</bean>
+
+	<bean class="com.standalone.collectiontype.Stud" name="student1">
+		<constructor-arg value="Ram" type="java.lang.String"/>
+		<constructor-arg value="101" />
+		<constructor-arg>
+			<set>
+				<value>345983535</value>
+				<value>34758398458</value>
+			</set>
+		</constructor-arg>
+		<constructor-arg ref="subjects" />
+		<constructor-arg ref="courses" />	
+		 
+	</bean>
+</beans>

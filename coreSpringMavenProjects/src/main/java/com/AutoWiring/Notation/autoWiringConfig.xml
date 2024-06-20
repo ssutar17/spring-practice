@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	                    https://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context 
+						http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+
+	<context:annotation-config />
+	<bean class="com.AutoWiring.Notation.Address" name="add1">
+		<property name="dist" value="Satara" />
+		<property name="city" value="vita" />
+	</bean>
+	
+	<bean class="com.AutoWiring.Notation.Address" name="add2">
+		<property name="dist" value="kolhapur" />
+		<property name="city" value="Warana" />
+	</bean>
+	
+
+	<bean class="com.AutoWiring.Notation.Emp" name="emp1" />
+</beans>
